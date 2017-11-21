@@ -8,11 +8,6 @@
 # The user should then be asked to fill in each blank appropriately to complete the paragraph.
 # This can be used as a study tool to help you remember important vocabulary!
 
-
-#psudocode
-
-
-
 '''
 
 prompt user for difficutly
@@ -29,8 +24,26 @@ difficulty y scene=' ' #You wake up...
 '''
 replacement_items=['_1_', '_2_', '_3_']
 blah_string='blahblahblah blah blah blah _1_ blag gggggg blah blah blah _2_ blah blah blahblah blah blah _3_ right?'
+easy_scene='easy string _1_ _2_'
+medium_scene='medium string _1_ _2_'
+hard_scene='hard string _1_ _2_'
 
-# Checks if an item in replacement_items is a substring of the scene passed in.
+
+#sets difficulty
+def set_diff(user_input):
+    user_input = raw_input('''Welcome adventurer, a great quest lies ahead!
+Please choose a difficulty by typing easy, medium or hard below:
+''')
+    if user_input == 'easy':
+        return 'easy string _1_ _2_ so easy'
+    if user_input == 'medium':
+        return 'medium string _1_ _2_ medium yo'
+    if user_input == 'hard':
+        return 'hard string _1_ _2_ hard whaaaat'
+    else:
+        return 'wrong input'
+
+# checks if an item in replacement_items is a substring of the scene passed in.
 def item_in_scene(scene, replacement_items):
     for pos in replacement_items:
         if pos in scene:
@@ -38,21 +51,23 @@ def item_in_scene(scene, replacement_items):
     return None
 
 def run_adventure(scene_string, replacement_items):
+    print scene_string
     replaced = []
     scene_string = scene_string.split()
-    for scene in scene_string:
-        replacement = item_in_scene(scene, replacement_items)
+    for i in scene_string:
+        replacement = item_in_scene(i, replacement_items)
         if replacement != None:
             user_input = raw_input("Fill in the blank for " + replacement)
-            scene = scene.replace(replacement, user_input)
-            replaced.append(scene)
+            i = i.replace(replacement, user_input)
+            replaced.append(i)
         else:
-            replaced.append(scene)
+            replaced.append(i)
     replaced = " ".join(replaced)
     return replaced
 
-print blah_string
-print run_adventure(blah_string, replacement_items)
+
+#print scene
+print run_adventure(set_diff(raw_input),replacement_items)
 
 '''
 if guessNumber > numberOfGuesses:
