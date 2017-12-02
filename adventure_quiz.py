@@ -10,16 +10,18 @@ replacement_items=['_1_', '_2_', '_3_', '_4_', '_5_']
 
 #story strings to keep code below cleaner
 die=color.RED + '''
+
 You have chosen poorly and you die so hard.
 
 ''' + color.GREEN + '''
 You have failed to survive! PLease Try again:
 ''' + color.END
-welcome = 'Welcome adventurer, a great quest lies ahead!'
+welcome ='Welcome adventurer, a great quest lies ahead!'
 fill=color.GREEN + "Fill in the blank for "
 l=''':
  ''' + color.END
 accept='''
+
 You have chosen well and you will live for now!
 ''' + color.END
 
@@ -86,31 +88,35 @@ Your ''' +color.YELLOW + 'backpack' + color.DARKCYAN + ''' will now hold:
     else:
         return 'wrong input'
 
-#supplies scene for level 2 based on difficulty
-def diff_scene2(user_input):
-    user_input = raw_input('''You've made it to level 2!
-Please choose a difficulty by typing easy, medium or hard below:
-''')
-    if user_input == 'easy':
-        return color.DARKCYAN + 'A' + color.BOLD + 'wild Bear appears! '+ color.END + color.DARKCYAN + 'You throw the' + color.RED + ' _1_ _2_ _3_ _4_ ' + color.DARKCYAN + 'at the bear and he...' + color.END
-    if user_input == 'medium':
-        return 'medium string _1_ _2_ medium yo'
-    if user_input == 'hard':
-        return 'hard string _1_ _2_ hard whaaaat'
-    else:
-        return 'wrong input'
+#supplies scene string based on level, difficulty and scene
+def diff_scene(level, diff, scene):
+    if level == 1 and diff == 1:
+        if scene == 4:
+            return color.DARKCYAN + '''You awake in a cold forest, nightfall is coming. You find yourself surrounded by trees in every direction.
+    To your left you find a ''' +color.GREEN + 'rusty hunting knife' + color.DARKCYAN + ' and a ' + color.GREEN + 'rock' + color.DARKCYAN + ''' and to your right, ''' +color.GREEN + 'a pack of shepard lemons' + color.DARKCYAN + '''.
+    You also find a ''' +color.YELLOW + 'backpack' + color.DARKCYAN + ''' on the ground behind you.
+    The ''' +color.YELLOW + 'backpack' + color.DARKCYAN + ''' can fit 4 items, though it already holds a ''' +color.GREEN + 'laptop, textbook, an angry ferret' + color.DARKCYAN + ' and a ' + color.GREEN + 'water bottle' + color.DARKCYAN + '''.
+    You're thankful to discover that you're fully clothed in Jeans, a warm sweater, running shoes and light gloves.
 
-#supplies scene for level 3 based on difficulty
-def diff_scene3(user_input):
-    user_input = raw_input('''You've made it to level 3!
-Please choose a difficulty by typing easy, medium or hard below:
-''')
-    if user_input == 'easy':
-        return color.DARKCYAN + 'level 3 _1_ _2_ _3_ _4_'
-    if user_input == 'medium':
-        return 'medium string _1_ _2_ medium yo'
-    if user_input == 'hard':
-        return 'hard string _1_ _2_ hard whaaaat'
+    Nightfall is coming, choose which 4 items you'll keep in the backpack to survive
+    (note: use 1 word lowercase answers, ie. Rusty Hunting Knife = knife)
+
+    Your ''' +color.YELLOW + 'backpack' + color.DARKCYAN + ''' will now hold:
+    ''' + color.RED + '_1_ _2_ _3_ _4_' + color.END
+
+    if level == 2:
+        if diff == 1 and scene == 1:
+            return color.DARKCYAN + '''Thunder rumbles in the sky and you know rain will fall soon, you must find shelter.
+    You remember a cave, and you know it is west of your current location.
+    A sliver of the sun still shines to your right, though as you look, it dips below the horizon.
+
+    You can go left, right, forwards or backwards to find the cave. You choose to go''' + color.RED + ''' _1_''' + color.DARKCYAN + '.' + color.END
+        if diff == 1 and scene == 2:
+            return'''
+    5 minutes into your walk towards the cave heavy rain starts to fall.
+    You think you hear a noise behind you, when you turn around you see ''' + color.RED + 'A WILD BEAR CHARGING AT YOU!' +color.DARKCYAN + '''
+    You need to make a split decision, ''' + color.GREEN + 'stand your ground and use your knife (fight) ' + color.DARKCYAN + 'or' + color.GREEN + ''' Run like hell (flee)
+    You choose to ''' + color.RED + '_2_' + color.END
     else:
         return 'wrong input'
 
@@ -126,31 +132,32 @@ def item_in_scene(scene, replacement_items):
     return None
 
 #checks answer based on level and difficulty
-def check(level, answer, diff):
-    if level == 1 and diff == 1:
-        if answer == ('knife') or answer == ('textbook') or answer == ('lemons') or answer == ('bottle'):
+def check(level, answer, diff, scene):
+    if level == 1 and diff == 1 and scene == 4:
+        if answer == ('knife') or ('lemons') or ('textbook') or ('bottle'):
             return True
         else:
             return False
-    if level == 2:
-        if answer == ('a') or answer == ('b') or answer == ('c') or answer == ('d'):
+    if level == 2 and diff == 1:
+        if scene == 1 and answer == ('left'):
             return True
         else:
             return False
-    if level == 3:
-        if answer == ('a') or answer == ('b') or answer == ('c') or answer == ('d'):
+        if scene == 2 and answer == ('flee'):
             return True
         else:
             return False
 
+
 #brings together all the functions
-def run_adventure(level, count):
+def run_adventure(level, count, scene_num):
+    diff = difficulty(raw_input)
     if level < 2:
         print welcome
-        #diff = difficulty(raw_input)
     while count > 0:
-        diff = difficulty(raw_input)
-        scene_string = s_s(level, diff)
+        #diff = difficulty(raw_input)
+        #scene_num = 1
+        scene_string = diff_scene(level, diff, scene_num)
         print chances(count)
         print scene_string
         replaced = []
@@ -164,7 +171,7 @@ def run_adventure(level, count):
             else:
                 replaced.append(i)
         replaced = " ".join(replaced)
-        if check(level, user_input, diff) == False:
+        if check(level, user_input, diff, scene_num) == False:
             count = count - 1
             if count > 0:
                 print replaced + die
@@ -173,18 +180,30 @@ def run_adventure(level, count):
                 break
         else:
             print replaced + accept
-            level = level + 1
-            if level > 3:
-                return 'you win, kthxbye'
-            else:
+            scene_num = scene_num + 1
+            if scene_num < 5:
+                level = level + 1
+                if level > 3:
+                    return 'you win, kthxbye'
+                else:
+                    if scene_num < 5:
+                        print 'next scene'
+                        run_adventure(level, count, scene_num)
+                        #continue
+            if scene_num == 5:
+                level = level + 1
                 print lvlup
-                run_adventure(level, count)
+
+                run_adventure(level, count, 1)
+                #continue
+            else:
+                return 'you win, byeee'
 
     #return replaced + murder + out
 
 
-
-
+#print item_in_scene()
+#print diff_scene(1, 1, 1)
 #print scene
 #dventure1(diff_scene(raw_input), 5, replacement_items)
-print run_adventure(1, 2)
+print run_adventure(1, 2, 4)
