@@ -7,7 +7,7 @@ class color:
    BOLD = '\033[1m'
    END = '\033[0m'
 
-replacement_items=['_1_', '_2_', '_3_', '_4_', '_5_', '_A_', '_B_', '_C_', '_D_']
+replacement_items=['_1_', '_2_', '_3_', '_4_', '_5_']
 
 #story strings to keep functions below cleaner
 die=color.RED + '''
@@ -240,8 +240,6 @@ The sun rises to your right, you know this means you must go(left, right forward
 You try to go towards the highway, but obviously you don't make it and you die''' + color.END
 
 
-
-
 #prompts user input and sets difficulty
 def difficulty(user_input):
     user_input = raw_input('''Please choose a difficulty by typing easy, medium or hard below:
@@ -347,10 +345,9 @@ def diff_scene(level, diff, scene):
                 return lvl_3_diff_3_scene_3
             if scene == 4:
                 return lvl_3_diff_3_scene_4
-
-
     else:
         return 'wrong input'
+
 #returns number of chances left
 def chances(count):
     return color.RED + 'You have ' + str(count) + ' chances remaining' + color.END
@@ -362,7 +359,7 @@ def item_in_scene(scene, replacement_items):
             return pos
     return None
 
-#checks answer based on level and difficulty
+#checks answer based on level and scene
 def check(level, answer, scene):
     while level == 1:
         while scene == 1:
@@ -408,7 +405,6 @@ def check(level, answer, scene):
             else:
                 return False
 
-
     while level == 3:
         while scene == 1:
             if answer == ('lemons'):
@@ -430,8 +426,6 @@ def check(level, answer, scene):
                 return True
             else:
                 return False
-
-
 
 #brings together all the functions
 def run_adventure(level, count, diff, scene_num, rep):
