@@ -1,5 +1,3 @@
-
-
 class col:
     """
     Adds color to text strings
@@ -13,10 +11,7 @@ class col:
     BO = '\033[1m' # BOLD
     E = '\033[0m' # END
 
-replacement_items=['_1_', '_2_', '_3_', '_4_', '_5_']
-
-
-    # From here to line 318 are story strings to keep functions below cleaner
+    # From here to line 319 are story strings to keep functions below cleaner
 die=col.RE + '''
 
 You have chosen poorly and you die so hard.
@@ -319,19 +314,81 @@ this means you must go
 go towards the highway, but obviously you don't make it and you die''' + col.E
 
 
-def difficulty(user_input):
-    # prompts user to choose difficulty and returns an int
-    user_input = raw_input('''Please choose a difficulty by typing easy,
-medium or hard below:
-''')
+lvl_data = {
+    # dict that provdies answers and items to be replaced based on level
+    'lvl_1': {
+        'answers': {'scene_1': 'knife',
+                    'scene_2': 'lemons',
+                    'scene_3': 'textbook',
+                    'scene_4': 'lighter',},},
+    'lvl_2': {
+        'answers': {'scene_1': 'left',
+                    'scene_2': 'flee',
+                    'scene_3': 'lighter',
+                    'scene_4': 'textbook',},},
+    'lvl_3': {
+        'answers': {'scene_1': 'lemons',
+                    'scene_2': 'knife',
+                    'scene_3': 'now',
+                    'scene_4': 'forward',},},
+    'replacement_items': ['_1_', '_2_', '_3_', '_4_', '_5_']}
 
-    if user_input == 'easy':
-        return 1
-    if user_input == 'medium':
-        return 2
-    if user_input == 'hard':
-        return 3
 
+scene_data = {
+    # dict that outputs correct string based on difficulty, level and scene
+        'easy': {
+            'lvl_1': {'scene_1': lvl_1_diff_1_scene_1,
+                'scene_2': lvl_1_diff_1_scene_2,
+                'scene_3': lvl_1_diff_1_scene_3,
+                'scene_4': lvl_1_diff_1_scene_4},
+            'lvl_2': {'scene_1': lvl_2_diff_1_scene_1,
+                'scene_2': lvl_2_diff_1_scene_2,
+                'scene_3': lvl_2_diff_1_scene_3,
+                'scene_4': lvl_2_diff_1_scene_4},
+            'lvl_3': {'scene_1': lvl_3_diff_1_scene_1,
+                'scene_2': lvl_3_diff_1_scene_2,
+                'scene_3': lvl_3_diff_1_scene_3,
+                'scene_4': lvl_3_diff_1_scene_4},
+                'count': 5
+                },
+        'medium': {
+            'lvl_1': {'scene_1': lvl_1_diff_2_scene_1,
+                'scene_2': lvl_1_diff_1_scene_2,
+                'scene_3': lvl_1_diff_1_scene_3,
+                'scene_4': lvl_1_diff_1_scene_4},
+            'lvl_2': {'scene_1': lvl_2_diff_2_scene_1,
+                'scene_2': lvl_2_diff_2_scene_2,
+                'scene_3': lvl_2_diff_2_scene_3,
+                'scene_4': lvl_2_diff_2_scene_4},
+            'lvl_3': {'scene_1': lvl_3_diff_2_scene_1,
+                'scene_2': lvl_3_diff_2_scene_2,
+                'scene_3': lvl_3_diff_2_scene_3,
+                'scene_4': lvl_3_diff_2_scene_4},
+                'count': 3
+                 },
+        'hard': {
+            'lvl_1': {'scene_1': lvl_1_diff_3_scene_1,
+                'scene_2': lvl_1_diff_1_scene_2,
+                'scene_3': lvl_1_diff_1_scene_3,
+                'scene_4': lvl_1_diff_1_scene_4},
+            'lvl_2': {'scene_1': lvl_2_diff_3_scene_1,
+                'scene_2': lvl_2_diff_3_scene_2,
+                'scene_3': lvl_2_diff_3_scene_3,
+                'scene_4': lvl_2_diff_3_scene_4},
+            'lvl_3': {'scene_1': lvl_3_diff_3_scene_1,
+                'scene_2': lvl_3_diff_3_scene_2,
+                'scene_3': lvl_3_diff_3_scene_3,
+                'scene_4': lvl_3_diff_3_scene_4},
+                'count': 1
+                }}
+
+
+def set_diff(diff):
+    diff = raw_input('''Choose a level: (easy / medium / hard)
+''').lower()
+    if diff in scene_data:
+        return diff
+    return 'wrong level'
 
 def set_count(user_input):
     '''
@@ -341,104 +398,17 @@ def set_count(user_input):
     user_input=raw_input('''Please type a number between 1 and 10 to select
 the number of guesses you will have to answer questions:
 ''')
-    return user_input
+    return int(user_input)
 
-
-def diff_scene(level, diff, scene):
-    # supplies scene string based on level, difficulty and scene
-    while level == 1:
-        while diff == 1:
-            if scene == 1:
-                return lvl_1_diff_1_scene_1
-            if scene == 2:
-                return lvl_1_diff_1_scene_2
-            if scene == 3:
-                return lvl_1_diff_1_scene_3
-            if scene == 4:
-                return lvl_1_diff_1_scene_4
-        while diff == 2:
-            if scene == 1:
-                return lvl_1_diff_2_scene_1
-            if scene == 2:
-                return lvl_1_diff_1_scene_2
-            if scene == 3:
-                return lvl_1_diff_1_scene_3
-            if scene == 4:
-                return lvl_1_diff_1_scene_4
-        while diff == 3:
-            if scene == 1:
-                return lvl_1_diff_3_scene_1
-            if scene == 2:
-                return lvl_1_diff_1_scene_2
-            if scene == 3:
-                return lvl_1_diff_1_scene_3
-            if scene == 4:
-                return lvl_1_diff_1_scene_4
-
-    while level == 2:
-        while diff == 1:
-            if scene == 1:
-                return lvl_2_diff_1_scene_1
-            if scene == 2:
-                return lvl_2_diff_1_scene_2
-            if scene == 3:
-                return lvl_2_diff_1_scene_3
-            if scene == 4:
-                return lvl_2_diff_1_scene_4
-        while diff == 2:
-            if scene == 1:
-                return lvl_2_diff_2_scene_1
-            if scene == 2:
-                return lvl_2_diff_2_scene_2
-            if scene == 3:
-                return lvl_2_diff_2_scene_3
-            if scene == 4:
-                return lvl_2_diff_2_scene_4
-        while diff == 3:
-            if scene == 1:
-                return lvl_2_diff_3_scene_1
-            if scene == 2:
-                return lvl_2_diff_3_scene_2
-            if scene == 3:
-                return lvl_2_diff_3_scene_3
-            if scene == 4:
-                return lvl_2_diff_3_scene_4
-    while level == 3:
-        while diff == 1:
-            if scene == 1:
-                return lvl_3_diff_1_scene_1
-            if scene == 2:
-                return lvl_3_diff_1_scene_2
-            if scene == 3:
-                return lvl_3_diff_1_scene_3
-            if scene == 4:
-                return lvl_3_diff_1_scene_4
-        while diff == 2:
-            if scene == 1:
-                return lvl_3_diff_2_scene_1
-            if scene == 2:
-                return lvl_3_diff_2_scene_2
-            if scene == 3:
-                return lvl_3_diff_2_scene_3
-            if scene == 4:
-                return lvl_3_diff_2_scene_4
-        while diff == 3:
-            if scene == 1:
-                return lvl_3_diff_3_scene_1
-            if scene == 2:
-                return lvl_3_diff_3_scene_2
-            if scene == 3:
-                return lvl_3_diff_3_scene_3
-            if scene == 4:
-                return lvl_3_diff_3_scene_4
-    else:
-        return 'wrong input'
-
+def select_scene(diff, level, scene):
+    # takes difficulty level and scene as input and outputs scene string
+        if scene in scene_data[diff][level]:
+            return scene_data[diff][level][scene]
+        return 'wrong scene'
 
 def chances(count):
     # takes count as input and returns number of chances left as string
-    return col.RE + 'You have ' + str(count) + ' chances remaining' + col.E
-
+    return col.RE + 'You have ' + str(count) + ' chances remaining ' + col.E
 
 def item_in_scene(scene, replacement_items):
     # checks if replacement item exists in a scene and returns the pos
@@ -447,101 +417,51 @@ def item_in_scene(scene, replacement_items):
             return pos
     return None
 
+def answer(level, answer, scene_num):
+    if answer in lvl_data[level]['answers'][scene_num]:
+        return True
+    return False
 
-def check(level, answer, scene):
-    # checks answer based on level and scene
-    while level == 1:
-        while scene == 1:
-            if answer == ('knife'):
-                return True
-            else:
-                return False
-        while scene == 2:
-            if answer == ('lemons'):
-                return True
-            else:
-                return False
-        while scene == 3:
-            if answer == ('textbook'):
-                return True
-            else:
-                return False
-        while scene == 4:
-            if answer == ('lighter'):
-                return True
-            else:
-                return False
+def next_scene(scene_num):
+    scene = scene_data['scene_num'][scene_num+1]
+    return scene
 
-    while level == 2:
-        while scene == 1:
-            if answer == ('left'):
-                return True
-            else:
-                return False
-        while scene == 2:
-            if answer == ('flee'):
-                return True
-            else:
-                return False
-        while scene == 3:
-            if answer == ('lighter'):
-                return True
-            else:
-                return False
-        while scene == 4:
-            if answer == ('textbook'):
-                return True
-            else:
-                return False
-
-    while level == 3:
-        while scene == 1:
-            if answer == ('lemons'):
-                return True
-            else:
-                return False
-        while scene == 2:
-            if answer == ('knife'):
-                return True
-            else:
-                return False
-        while scene == 3:
-            if answer == ('now'):
-                return True
-            else:
-                return False
-        while scene == 4:
-            if answer == ('forward'):
-                return True
-            else:
-                return False
+def up(string):
+    string = list(string)
+    if string[0] == 's':
+        string[6] = int(string[6])+1
+        string = ''.join(str(e) for e in string)
+        return string
+    if string[0] == 'l':
+        string[4] = int(string[4])+1
+        string = ''.join(str(e) for e in string)
+        return string
+    return 'bad up string'
 
 
-def run_adventure(level, count, diff, scene_num, rep):
+def play(level, diff, count, scene, rep):
     '''
     Brings together all the functions and strings to play the game
     Takes as input the level, amount of guesses, difficulty, scene number and
-    a replacement string(or none if not available) then outputs the game
+    a replacement string then outputs the game until all guesses have
+    been used or the game is won
     '''
     while count > 0:
-        scene_string = diff_scene(level, diff, scene_num)
+        scene_string = select_scene(diff, level, scene)
         print chances(count)
         print scene_string
-        if scene_num == 1:
-            replaced = []
-        else:
-            replaced = [rep]
+        replaced = [rep]
         scene_string = scene_string.split()
         for i in scene_string:
-            replacement = item_in_scene(i, replacement_items)
+            replacement = item_in_scene(i, lvl_data['replacement_items'])
             if replacement != None:
-                user_input = raw_input(fill + replacement + colon)
+                user_input = raw_input(fill + replacement + colon).lower()
                 i = i.replace(replacement, user_input)
                 replaced.append(i)
             else:
                 replaced.append(i)
         replaced = " ".join(replaced)
-        if check(level, user_input, scene_num) == False:
+        if answer(level, user_input, scene) == False:
             count = count - 1
             if count > 0:
                 print replaced + die
@@ -551,20 +471,20 @@ def run_adventure(level, count, diff, scene_num, rep):
                 break
         else:
             print replaced + accept
-            scene_num = scene_num + 1
-            if scene_num < 5:
-                run_adventure(level, count, diff, scene_num, replaced)
+            if scene !='scene_4':
+                scene = up(scene)
+                play(level, diff, count, scene, replaced)
             else:
-                level = level + 1
-                if level < 4:
+                if level !='lvl_3':
+                    level = up(level)
                     print lvlup
-                    run_adventure(level, count, diff, 1, replaced)
+                    play(level, diff, count, 'scene_1', replaced)
                 print col.RE + 'you win, game over man'
                 break
             break
         break
 
-
-
 print welcome
-run_adventure(1, int(set_count(raw_input)), difficulty(raw_input), 1, None)
+diff = set_diff(raw_input)
+count = scene_data[diff]['count']
+print play('lvl_1', diff, count, 'scene_1', '')
