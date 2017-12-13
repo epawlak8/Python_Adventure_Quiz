@@ -1,18 +1,20 @@
+
+
 class col:
     """
     Adds color to text strings
     color class from Boubakr @
     stackoverflow.com/questions/8924173/how-do-i-print-BO-text-in-python
     """
-    DC = '\033[36m' # DARKCYAN
-    YE = '\033[93m' # YELLOW
-    GR = '\033[92m' # GREEN
-    RE = '\033[91m' # RED
-    BO = '\033[1m' # BOLD
-    E = '\033[0m' # END
+    DC = '\033[36m'  # DARKCYAN
+    YE = '\033[93m'  # YELLOW
+    GR = '\033[92m'  # GREEN
+    RE = '\033[91m'  # RED
+    BO = '\033[1m'  # BOLD
+    E = '\033[0m'  # END
 
     # From here to line 319 are story strings to keep functions below cleaner
-die=col.RE + '''
+die = col.RE + '''
 
 You have chosen poorly and you die so hard.
 
@@ -20,48 +22,48 @@ You have chosen poorly and you die so hard.
 You have failed to survive! Please Try again:
 ''' + col.E
 
-welcome=col.GR + '''
+welcome = col.GR + '''
 
 Welcome adventurer, a great quest lies ahead!
 
 This game has 4 levels with 4 scenes per level.
 
-You will be asked to provide text answers, please use 1 word, answers.
+You will be asked to provide text answers, please use 1 word answers.
 
 Good Luck!
 ''' + col.E
 
-fill=col.GR + "Fill in the blank for "
+fill = col.GR + "Fill in the blank for "
 
-colon=''':
+colon = ''':
  ''' + col.E
 
-accept='''
+accept = '''
 
 You have chosen well and you will live for now!
 ''' + col.E
 
-out=col.RE + '''
+out = col.RE + '''
 
 You have run out of chances!
 
 You die alone. Probably cold... Sucks I bet...''' + col.E
 
-lvlup=col.GR + '''
+lvlup = col.GR + '''
 
 ***YOU MADE IT TO THE NEXT LEVEL, HELL YEAH BUDDY***
 
 ''' + col.E
 
-lvl_1_diff_1_scene_1=col.DC + """
+lvl_1_diff_1_scene_1 = col.DC + """
 You awake in a cold forest, nightfall is coming.
 You find yourself surrounded by trees in every direction.
 To your left you find a """ + col.GR + """rusty hunting
 knife""" + col.DC + """ and a """ + col.GR + 'rock,' + col.DC + """ and to your
-right, """ +col.GR + """a pack of shepard lemons""" + col.DC + """. You
-also find a """ +col.YE + """backpack""" + col.DC + """ on the ground behind
+right, """ + col.GR + """a pack of shepard lemons""" + col.DC + """. You
+also find a """ + col.YE + """backpack""" + col.DC + """ on the ground behind
 you. The """ + col.YE + """backpack""" + col.DC + """ can fit 4 items, though
-it already holds a """ +col.GR + """laptop, textbook,
+it already holds a """ + col.GR + """laptop, textbook,
 an angry ferret""" + col.DC + """ and a """ + col.GR + """lighter
 """ + col.DC + """. You're thankful to discover that
 you're fully clothed in Jeans, a warm
@@ -69,27 +71,27 @@ sweater, running shoes and light gloves.
 The first item you put in your backpack is:
 the """ + col.RE + "_1_" + col.DC + "." + col.E
 
-lvl_1_diff_1_scene_2=col.DC + '''
+lvl_1_diff_1_scene_2 = col.DC + '''
 The second item you put in your backpack is the
 ''' + col.RE + '_2_' + col.DC + '.' + col.E
 
-lvl_1_diff_1_scene_3=col.DC + '''
+lvl_1_diff_1_scene_3 = col.DC + '''
 The third item you put in your backpack is the
 ''' + col.RE + '_3_' + col.DC + '.' + col.E
 
-lvl_1_diff_1_scene_4=col.DC + '''
+lvl_1_diff_1_scene_4 = col.DC + '''
 The fourth item you put in your backpack is the
 ''' + col.RE + '_4_' + col.DC + '.' + col.E
 
-lvl_1_diff_2_scene_1=col.DC + """
+lvl_1_diff_2_scene_1 = col.DC + """
 You awake in a cold forest, nightfall is coming.
 You find yourself surrounded by trees in every direction.
 To your left you find a """ + col.GR + """rusty hunting
 knife""" + col.DC + """ and a """ + col.GR + 'decorative gnome,' + col.DC + """
-and to your right, """ +col.GR + """a pack of shepard lemons""" + col.DC + """.
- You also find a """ +col.YE + """backpack""" + col.DC + """ on the ground
+and to your right, """ + col.GR + """a pack of shepard lemons""" + col.DC + """.
+ You also find a """ + col.YE + """backpack""" + col.DC + """ on the ground
 behind you. The """ + col.YE + """backpack""" + col.DC + """ can fit 4 items,
-though it already holds a """ +col.GR + """laptop, textbook,
+though it already holds a """ + col.GR + """laptop, textbook,
 an angry ferret""" + col.DC + """ and a """ + col.GR + """lighter
 """ + col.DC + """. You're thankful to discover that
 you're fully clothed in Jeans, a warm
@@ -97,20 +99,20 @@ sweater, running shoes and light gloves.
 The first item you put in your backpack is:
 the """ + col.RE + "_1_" + col.DC + "." + col.E
 
-lvl_1_diff_3_scene_1=col.DC + '''You awake in a cold forest, nightfall is
+lvl_1_diff_3_scene_1 = col.DC + '''You awake in a cold forest, nightfall is
 coming. You find yourself surrounded by trees in every direction. To your left
-you find a ''' +col.GR + 'rusty hunting knife' + col.DC + ''' and
+you find a ''' + col.GR + 'rusty hunting knife' + col.DC + ''' and
 a ''' + col.GR + 'decorative knome' + col.DC + ''' and to your right,
-''' +col.GR + 'a pack of shepard lemons' + col.DC + '''. You also find
-a ''' +col.YE + 'backpack' + col.DC + ''' on the ground behind you. The
-''' +col.YE + 'backpack' + col.DC + ''' can fit 4 items, though it already
-holds ''' +col.GR + '4 crayons, textbook, a very angry ferret' + col.DC + '''
+''' + col.GR + 'a pack of shepard lemons' + col.DC + '''. You also find
+a ''' + col.YE + 'backpack' + col.DC + ''' on the ground behind you. The
+''' + col.YE + 'backpack' + col.DC + ''' can fit 4 items, though it already
+holds ''' + col.GR + '4 crayons, textbook, a very angry ferret' + col.DC + '''
 and a ''' + col.GR + 'lighter' + col.DC + '''.
 You're dismayed to discover that you're only wearing a swim suit and socks...
 Weird choice for a cold forest... I bet you die pretty quickly. The first item
-you put in your backpack is the '''+ col.RE + '''_1_''' + col.DC + '.' + col.E
+you put in your backpack is the ''' + col.RE + '''_1_''' + col.DC + '.' + col.E
 
-lvl_2_diff_1_scene_1=col.DC + '''Thunder rumbles in the sky and you know rain
+lvl_2_diff_1_scene_1 = col.DC + '''Thunder rumbles in the sky and you know rain
 will fall soon, you must find shelter. You remember a cave, and you know it
 is west of your current location. A sliver of the sun still shines to your
 right, though as you look, it dips below the horizon.
@@ -118,11 +120,11 @@ right, though as you look, it dips below the horizon.
 You can go left, right, forwards or backwards to find the cave.
 You choose to go''' + col.RE + ' _1_' + col.DC + '.' + col.E
 
-lvl_2_diff_1_scene_2=col.DC + '''
+lvl_2_diff_1_scene_2 = col.DC + '''
 
 5 minutes into your walk towards the cave heavy rain starts to fall.
 You think you hear a noise behind you, when you turn around you see
-''' + col.RE + 'A WILD BEAR CHARGING AT YOU!' +col.DC + '''
+''' + col.RE + 'A WILD BEAR CHARGING AT YOU!' + col.DC + '''
 
 You need to make a split decision,
 ''' + col.GR + 'stand your ground and use your knife (fight) ' + col.DC + '''
@@ -130,7 +132,7 @@ or''' + col.GR + ''' Run like hell (flee)
 You choose to ''' + col.RE + '_2_' + col.DC + '''.
 ''' + col.E
 
-lvl_2_diff_1_scene_3=col.DC + '''
+lvl_2_diff_1_scene_3 = col.DC + '''
 
 You escape the bear and run through the forest, by the time you reach the cave
 it's like super dark out. Near the entrance of the cave you find some dead
@@ -138,14 +140,15 @@ twigs. Once in the cave you use the ''' + col.RE + '_3_' + col.DC + ''' from
 your ''' + col.YE + 'backpack' + col.DC + ''' to light the twigs on fire.
 ''' + col.E
 
-lvl_2_diff_1_scene_4=col.DC + '''
+lvl_2_diff_1_scene_4 = col.DC + '''
 
-The twigs are wet, and you need to use the ''' + col.RE +  '_4_' + col.DC + ' from your ' + col.YE + 'Backpack' + col.DC + ''' as kindling to get the fire going,
-nice and toasty!
+The twigs are wet, and you need to use the ''' + col.RE + '''_4_
+''' + col.DC + ' from your ' + col.YE + 'Backpack' + col.DC + ''' as kindling
+to get the fire going, nice and toasty!
 
 ''' + col.E
 
-lvl_2_diff_2_scene_1=col.DC + '''Thunder rumbles in the sky and you know rain
+lvl_2_diff_2_scene_1 = col.DC + '''Thunder rumbles in the sky and you know rain
 will fall soon, you must find shelter. You think there is a cave somwhere,
 and you think it is west of your current location. As you try to get your
 bearings from the sun you trip, fall and hit your head. You awake later, it
@@ -155,10 +158,10 @@ You can go left, right, forwards or backwards to find the cave.
 You choose to go''' + col.RE + ''' _1_''' + col.DC + '''.
 ''' + col.E
 
-lvl_2_diff_2_scene_2=col.DC + '''
+lvl_2_diff_2_scene_2 = col.DC + '''
 
 When you awoke the second time rain was already falling and...
-OH SHIT! ''' + col.RE + 'A WILD BEAR IS CHARGING AT YOU!' +col.DC + '''
+OH SHIT! ''' + col.RE + 'A WILD BEAR IS CHARGING AT YOU!' + col.DC + '''
 
 You need to make a split decision,
 ''' + col.GR + 'stand your ground and use your knife (fight) ' + col.DC + '''
@@ -166,7 +169,7 @@ or''' + col.GR + ''' Run like hell (flee)
 You choose to ''' + col.RE + '_2_' + col.DC + '.' + col.E + '''
 ''' + col.E
 
-lvl_2_diff_2_scene_3=col.DC + '''
+lvl_2_diff_2_scene_3 = col.DC + '''
 
 You escape the bear and run through the forest, You trip and fall so much
 because it's like super dark out, you're like 27.3 percent hurt... Pretty bad
@@ -177,16 +180,16 @@ significant amount of bat guano. Once in the cave you use the
 You're about to have a terrbile fire... Just vile.
 ''' + col.E
 
-lvl_2_diff_2_scene_4=col.DC + '''
+lvl_2_diff_2_scene_4 = col.DC + '''
 
 The guano is wet, and just like super gross, and you need to use the
-''' + col.RE +  '_4_' + col.DC + ' from your ' + col.YE + '''Backpack
+''' + col.RE + '_4_' + col.DC + ' from your ' + col.YE + '''Backpack
 ''' + col.DC + ''' as kindling to get the fire going,
 Great! So enjoy the bat shit campfire...
 
 ''' + col.E
 
-lvl_2_diff_3_scene_1=col.DC + '''Rain starts to fall on you out of nowhere
+lvl_2_diff_3_scene_1 = col.DC + '''Rain starts to fall on you out of nowhere
 and it's a huge amount of rain. You think there is a cave somwhere, but you
 honestly can't remember where it was. As you try to get your bearings from
 the sun you trip, fall and hit your head. You awake later, it is pitch black,
@@ -197,10 +200,10 @@ You can go left, right, forwards or backwards to find the cave.
 You choose to go''' + col.RE + ''' _1_''' + col.DC + '''.
 ''' + col.E
 
-lvl_2_diff_3_scene_2=col.DC + '''
+lvl_2_diff_3_scene_2 = col.DC + '''
 
 You're wet and partially legless
-OH SHIT! ''' + col.RE + 'A WILD BEAR IS CHARGING AT YOU!' +col.DC + '''
+OH SHIT! ''' + col.RE + 'A WILD BEAR IS CHARGING AT YOU!' + col.DC + '''
 
 You need to make a split decision,
 ''' + col.GR + 'stand your ground and use your knife (fight) ' + col.DC + '''
@@ -208,7 +211,7 @@ or''' + col.GR + ''' Run like hell (flee)
 You choose to ''' + col.RE + '_2_' + col.DC + '.' + col.DC + '''
 But either way... I bet you loose a hand.''' + col.E
 
-lvl_2_diff_3_scene_3=col.DC + '''
+lvl_2_diff_3_scene_3 = col.DC + '''
 
 You escape the bear and hobble through the forest, You trip and fall so much
 because it's like super dark out, you're like 86.3 percent hurt...so bad.
@@ -220,25 +223,25 @@ your socks I guess... Gross. You use the ''' + col.RE + '_3_' + col.DC + '''
 You're about to have a terrbile fire... Just vile.
 ''' + col.E
 
-lvl_2_diff_3_scene_4=col.DC + '''
+lvl_2_diff_3_scene_4 = col.DC + '''
 
 The socks are wet, and just like so gross, and you need to use the
-''' + col.RE +  '_4_' + col.DC + ' from your ' + col.YE + '''Backpack
+''' + col.RE + '_4_' + col.DC + ' from your ' + col.YE + '''Backpack
 ''' + col.DC + ''' as kindling to get the fire going,
 Great! So enjoy the dirty socks campfire...
 
 ''' + col.E
 
-lvl_3_diff_1_scene_1=col.DC + '''Your eyelids grow heavy and you finally
+lvl_3_diff_1_scene_1 = col.DC + '''Your eyelids grow heavy and you finally
 begin to grow tired by the fire, before you fall asleep you eat the
 ''' + col.RE + '_1_' + col.DC + ' from your ' + col.YE + 'backpack' + col.E
 
-lvl_3_diff_1_scene_2=col.DC + '''You settle in for the night and decide that
+lvl_3_diff_1_scene_2 = col.DC + '''You settle in for the night and decide that
 because you don't know who or what may lurk nearby, it's probably safest to
 sleep with the ''' + col.RE + '_2_' + col.DC + ''' from your
 ''' + col.YE + 'backpack' + col.DC + ' closest to you, just in case.' + col.E
 
-lvl_3_diff_1_scene_3=col.DC + '''zzz...
+lvl_3_diff_1_scene_3 = col.DC + '''zzz...
 zzz...
 zzz...
 zzz...
@@ -249,22 +252,22 @@ think. You realize you'll either have to clear the rocks and debris in the
 morning (later), or try to dig a whole through the muddy rocks while it's
 wet (now). You choose to do it ''' + col.RE + '_3_' + col.DC + '.' + col.E
 
-lvl_3_diff_1_scene_4=col.DC + '''Morning finally comes and you climb out the
+lvl_3_diff_1_scene_4 = col.DC + '''Morning finally comes and you climb out the
 small hole you made the night before into the sunlight. You know if you walk
 North you will eventually reach the highway, and someone who can help you.
 The sun rises to your right, you know this means you must go
 (left, right forward or back) ''' + col.RE + '_4_' + col.DC + '.' + col.E
 
-lvl_3_diff_2_scene_1=col.DC + '''Your eyelids grow heavy and you finally
+lvl_3_diff_2_scene_1 = col.DC + '''Your eyelids grow heavy and you finally
 begin to grow tired by the fire, before you fall asleep you eat the
-''' +col.RE + '_1_' + col.DC + ' from your ' + col.YE + 'backpack' + col.E
+''' + col.RE + '_1_' + col.DC + ' from your ' + col.YE + 'backpack' + col.E
 
-lvl_3_diff_2_scene_2=col.DC + '''You settle in for the night and decide that
+lvl_3_diff_2_scene_2 = col.DC + '''You settle in for the night and decide that
 because you don't know who or what may lurk nearby, it's probably safest to
 sleep with the ''' + col.RE + '_2_' + col.DC + ''' from your
 ''' + col.YE + 'backpack' + col.DC + ' closest to you, just in case.' + col.E
 
-lvl_3_diff_2_scene_3=col.DC + '''zzz...
+lvl_3_diff_2_scene_3 = col.DC + '''zzz...
 zzz...
 zzz...
 zzz...
@@ -277,22 +280,22 @@ it ''' + col.RE + '_3_' + col.DC + '.' + col.DC + ''' You use your one
 existing hand to fling the water out of the hole.
 It sucks and you're bleeding a bunch''' + col.E
 
-lvl_3_diff_2_scene_4=col.DC + '''Morning finally comes and you climb out the
+lvl_3_diff_2_scene_4 = col.DC + '''Morning finally comes and you climb out the
 small hole you made the night before into the sunlight. You know if you walk
 north you will eventually reach the highway, and someone who can help you.
 The sun rises to your right, you know this means you must go
 (left, right forward or back) ''' + col.RE + '_4_' + col.DC + '.' + col.E
 
-lvl_3_diff_3_scene_1=col.DC + '''Your eyelids grow heavy and you finally
+lvl_3_diff_3_scene_1 = col.DC + '''Your eyelids grow heavy and you finally
 begin to grow tired by the fire, before you fall asleep you eat the
-''' +col.RE + '_1_' + col.DC + ' from your ' + col.YE + 'backpack' + col.E
+''' + col.RE + '_1_' + col.DC + ' from your ' + col.YE + 'backpack' + col.E
 
-lvl_3_diff_3_scene_2=col.DC + '''You settle in for the night and decide that
+lvl_3_diff_3_scene_2 = col.DC + '''You settle in for the night and decide that
 because you don't know who or what may lurk nearby, it's probably safest to
 sleep with the ''' + col.RE + '_2_' + col.DC + ' from your ' + col.YE + '''
 backpack''' + col.DC + ' closest to you, just in case.' + col.E
 
-lvl_3_diff_3_scene_3=col.DC + '''zzz...
+lvl_3_diff_3_scene_3 = col.DC + '''zzz...
 zzz...
 zzz...
 zzz...
@@ -305,7 +308,7 @@ do it ''' + col.RE + '_3_' + col.DC + '.' + col.DC + ''' You use your one
 existing hand to fling the water out of the hole. It sucks and you're
 bleeding a bunch''' + col.E
 
-lvl_3_diff_3_scene_4=col.DC + '''Morning finally comes and you climb out the
+lvl_3_diff_3_scene_4 = col.DC + '''Morning finally comes and you climb out the
 small hole you made the night before into the sunlight. You know if you walk
 North you will eventually reach the highway, and someone who can help you.
 You will most certainly die today. The sun rises to your right, you know
@@ -320,85 +323,84 @@ lvl_data = {
         'answers': {'scene_1': 'knife',
                     'scene_2': 'lemons',
                     'scene_3': 'textbook',
-                    'scene_4': 'lighter',},},
+                    'scene_4': 'lighter', }, },
     'lvl_2': {
         'answers': {'scene_1': 'left',
                     'scene_2': 'flee',
                     'scene_3': 'lighter',
-                    'scene_4': 'textbook',},},
+                    'scene_4': 'textbook', }, },
     'lvl_3': {
         'answers': {'scene_1': 'lemons',
                     'scene_2': 'knife',
                     'scene_3': 'now',
-                    'scene_4': 'forward',},},
+                    'scene_4': 'forward', }, },
     'replacement_items': ['_1_', '_2_', '_3_', '_4_', '_5_']}
-
 
 scene_data = {
     # dict that outputs correct string based on difficulty, level and scene
-        'easy': {
-            'lvl_1': {'scene_1': lvl_1_diff_1_scene_1,
-                'scene_2': lvl_1_diff_1_scene_2,
-                'scene_3': lvl_1_diff_1_scene_3,
-                'scene_4': lvl_1_diff_1_scene_4},
-            'lvl_2': {'scene_1': lvl_2_diff_1_scene_1,
-                'scene_2': lvl_2_diff_1_scene_2,
-                'scene_3': lvl_2_diff_1_scene_3,
-                'scene_4': lvl_2_diff_1_scene_4},
-            'lvl_3': {'scene_1': lvl_3_diff_1_scene_1,
-                'scene_2': lvl_3_diff_1_scene_2,
-                'scene_3': lvl_3_diff_1_scene_3,
-                'scene_4': lvl_3_diff_1_scene_4},
-                'count': 5
-                },
-        'medium': {
-            'lvl_1': {'scene_1': lvl_1_diff_2_scene_1,
-                'scene_2': lvl_1_diff_1_scene_2,
-                'scene_3': lvl_1_diff_1_scene_3,
-                'scene_4': lvl_1_diff_1_scene_4},
-            'lvl_2': {'scene_1': lvl_2_diff_2_scene_1,
-                'scene_2': lvl_2_diff_2_scene_2,
-                'scene_3': lvl_2_diff_2_scene_3,
-                'scene_4': lvl_2_diff_2_scene_4},
-            'lvl_3': {'scene_1': lvl_3_diff_2_scene_1,
-                'scene_2': lvl_3_diff_2_scene_2,
-                'scene_3': lvl_3_diff_2_scene_3,
-                'scene_4': lvl_3_diff_2_scene_4},
-                'count': 3
-                 },
-        'hard': {
-            'lvl_1': {'scene_1': lvl_1_diff_3_scene_1,
-                'scene_2': lvl_1_diff_1_scene_2,
-                'scene_3': lvl_1_diff_1_scene_3,
-                'scene_4': lvl_1_diff_1_scene_4},
-            'lvl_2': {'scene_1': lvl_2_diff_3_scene_1,
-                'scene_2': lvl_2_diff_3_scene_2,
-                'scene_3': lvl_2_diff_3_scene_3,
-                'scene_4': lvl_2_diff_3_scene_4},
-            'lvl_3': {'scene_1': lvl_3_diff_3_scene_1,
-                'scene_2': lvl_3_diff_3_scene_2,
-                'scene_3': lvl_3_diff_3_scene_3,
-                'scene_4': lvl_3_diff_3_scene_4},
-                'count': 1
-                }}
+    'easy': {
+        'lvl_1': {'scene_1': lvl_1_diff_1_scene_1,
+                  'scene_2': lvl_1_diff_1_scene_2,
+                  'scene_3': lvl_1_diff_1_scene_3,
+                  'scene_4': lvl_1_diff_1_scene_4},
+        'lvl_2': {'scene_1': lvl_2_diff_1_scene_1,
+                  'scene_2': lvl_2_diff_1_scene_2,
+                  'scene_3': lvl_2_diff_1_scene_3,
+                  'scene_4': lvl_2_diff_1_scene_4},
+        'lvl_3': {'scene_1': lvl_3_diff_1_scene_1,
+                  'scene_2': lvl_3_diff_1_scene_2,
+                  'scene_3': lvl_3_diff_1_scene_3,
+                  'scene_4': lvl_3_diff_1_scene_4},
+        'count': 5
+            },
+    'medium': {
+        'lvl_1': {'scene_1': lvl_1_diff_2_scene_1,
+                  'scene_2': lvl_1_diff_1_scene_2,
+                  'scene_3': lvl_1_diff_1_scene_3,
+                  'scene_4': lvl_1_diff_1_scene_4},
+        'lvl_2': {'scene_1': lvl_2_diff_2_scene_1,
+                  'scene_2': lvl_2_diff_2_scene_2,
+                  'scene_3': lvl_2_diff_2_scene_3,
+                  'scene_4': lvl_2_diff_2_scene_4},
+        'lvl_3': {'scene_1': lvl_3_diff_2_scene_1,
+                  'scene_2': lvl_3_diff_2_scene_2,
+                  'scene_3': lvl_3_diff_2_scene_3,
+                  'scene_4': lvl_3_diff_2_scene_4},
+        'count': 3
+             },
+    'hard': {
+        'lvl_1': {'scene_1': lvl_1_diff_3_scene_1,
+                  'scene_2': lvl_1_diff_1_scene_2,
+                  'scene_3': lvl_1_diff_1_scene_3,
+                  'scene_4': lvl_1_diff_1_scene_4},
+        'lvl_2': {'scene_1': lvl_2_diff_3_scene_1,
+                  'scene_2': lvl_2_diff_3_scene_2,
+                  'scene_3': lvl_2_diff_3_scene_3,
+                  'scene_4': lvl_2_diff_3_scene_4},
+        'lvl_3': {'scene_1': lvl_3_diff_3_scene_1,
+                  'scene_2': lvl_3_diff_3_scene_2,
+                  'scene_3': lvl_3_diff_3_scene_3,
+                  'scene_4': lvl_3_diff_3_scene_4},
+        'count': 1
+            }}
 
 
 def set_diff(diff):
+    # prompts user to select difficulty and returns value
     diff = raw_input('''Choose a level: (easy / medium / hard)
 ''').lower()
     if diff in scene_data:
         return diff
     return 'wrong level'
 
+
 def set_count(user_input):
-    '''
-    prompts user to select the number of guesses they may have and returns
-    that int
-    '''
-    user_input=raw_input('''Please type a number between 1 and 10 to select
+    # takes user input to return an int as a number of guesses for play
+    user_input = raw_input('''Please type a number between 1 and 10 to select
 the number of guesses you will have to answer questions:
 ''')
     return int(user_input)
+
 
 def select_scene(diff, level, scene):
     # takes difficulty level and scene as input and outputs scene string
@@ -406,9 +408,11 @@ def select_scene(diff, level, scene):
             return scene_data[diff][level][scene]
         return 'wrong scene'
 
+
 def chances(count):
     # takes count as input and returns number of chances left as string
     return col.RE + 'You have ' + str(count) + ' chances remaining ' + col.E
+
 
 def item_in_scene(scene, replacement_items):
     # checks if replacement item exists in a scene and returns the pos
@@ -417,16 +421,16 @@ def item_in_scene(scene, replacement_items):
             return pos
     return None
 
+
 def answer(level, answer, scene_num):
+    # checks game answers depending on level and scene number
     if answer in lvl_data[level]['answers'][scene_num]:
         return True
     return False
 
-def next_scene(scene_num):
-    scene = scene_data['scene_num'][scene_num+1]
-    return scene
 
 def up(string):
+    # takes string as input and changes either scene or level number to be +1
     string = list(string)
     if string[0] == 's':
         string[6] = int(string[6])+1
@@ -437,6 +441,31 @@ def up(string):
         string = ''.join(str(e) for e in string)
         return string
     return 'bad up string'
+
+
+def accept_loop(level, diff, count, scene, replaced):
+    # this loop is to be used in the play funtion when an answer is correct
+    print replaced + accept
+    if scene != 'scene_4':
+        scene = up(scene)
+        play(level, diff, count, scene, replaced)
+    else:
+        if level != 'lvl_3':
+            level = up(level)
+            print lvlup
+            play(level, diff, count, 'scene_1', replaced)
+        print col.RE + 'you win, game over man'
+
+
+def fail_loop(level, diff, count, scene, replaced):
+        # this loop to be used in the play funtion when an answer is incorrect
+    count = count - 1
+    if count > 0:
+        print replaced + die
+        play(level, diff, count, scene, replaced)
+    else:
+        print col.RE + 'You loose, how unfortunate!'
+        exit()
 
 
 def play(level, diff, count, scene, rep):
@@ -452,39 +481,21 @@ def play(level, diff, count, scene, rep):
         print scene_string
         replaced = [rep]
         scene_string = scene_string.split()
-        for i in scene_string:
-            replacement = item_in_scene(i, lvl_data['replacement_items'])
-            if replacement != None:
+        for item in scene_string:
+            replacement = item_in_scene(item, lvl_data['replacement_items'])
+            if replacement is not None:
                 user_input = raw_input(fill + replacement + colon).lower()
-                i = i.replace(replacement, user_input)
-                replaced.append(i)
+                item = item.replace(replacement, user_input)
+                replaced.append(item)
             else:
-                replaced.append(i)
+                replaced.append(item)
         replaced = " ".join(replaced)
-        if answer(level, user_input, scene) == False:
-            count = count - 1
-            if count > 0:
-                print replaced + die
-                continue
-            else:
-                print col.RE + 'You loose, how unfortunate!'
-                break
-        else:
-            print replaced + accept
-            if scene !='scene_4':
-                scene = up(scene)
-                play(level, diff, count, scene, replaced)
-            else:
-                if level !='lvl_3':
-                    level = up(level)
-                    print lvlup
-                    play(level, diff, count, 'scene_1', replaced)
-                print col.RE + 'you win, game over man'
-                break
-            break
-        break
+        if answer(level, user_input, scene) is not False:
+            accept_loop(level, diff, count, scene, replaced)
+        fail_loop(level, diff, count, scene, replaced)
+
 
 print welcome
 diff = set_diff(raw_input)
 count = scene_data[diff]['count']
-print play('lvl_1', diff, count, 'scene_1', '')
+play('lvl_1', diff, count, 'scene_1', '')
