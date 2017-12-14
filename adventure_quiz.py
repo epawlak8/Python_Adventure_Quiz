@@ -136,8 +136,8 @@ lvl_2_diff_1_scene_3 = col.DARKCYAN + '''
 
 You escape the bear and run through the forest, by the time you reach the cave
 it's like super dark out. Near the entrance of the cave you find some dead
-twigs. Once in the cave you use the ''' + col.RED + '_3_' + col.DARKCYAN +
-''' from your ''' + col.YELLOW + 'backpack' + col.DARKCYAN + ''' to light the
+twigs. Once in the cave you use the ''' + col.RED + '_3_' + col.DARKCYAN + '''
+ from your ''' + col.YELLOW + 'backpack' + col.DARKCYAN + ''' to light the
 twigs on fire. ''' + col.END
 
 lvl_2_diff_1_scene_4 = col.DARKCYAN + '''
@@ -472,6 +472,7 @@ def accept_loop(level, diff, count, scene, replaced):
             print lvlup
             play(level, diff, count, 'scene_1', replaced)
         print col.RED + 'you win, game over man'
+        exit()
 
 
 def fail_loop(level, diff, count, scene, replaced):
