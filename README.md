@@ -1,6 +1,6 @@
 Python_Adventure_Quiz
 
-A "choose your own adventure" style adventure game to be run in python. Created for Udacity Courses
+A "choose your own adventure" style adventure game to be run in python. 
 
 GETTING STARTED:
 
